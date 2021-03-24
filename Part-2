@@ -1,0 +1,37 @@
+// ---------Part 2-------------Read Data from Smart Contracts with Web3.js ---------
+
+ const contractAbi = [
+  {
+		"inputs": [],
+		"name": "getAge",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "setAge",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	}
+];
+
+const contractAddress = 0x798B0244bEF7f5208A7EBBA437f83cE25773077A;
+
+// JavaScript representation of contract 
+const _contract = new Web3.eth.Contract(contractAbi,contractAddress);
+//console.log(_contract.methods);
+
+_contract.methods.getAge().call((err, result) => { 
+    console.log(result) ;
+})
+
+
+
