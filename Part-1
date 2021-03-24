@@ -1,0 +1,15 @@
+//-------Part 1--------------Checking Account Balances-----------------
+
+
+const web3 = require('web3');
+const rpcURL= 'HTTP://127.0.0.1:7545';
+const Web3 = new web3(rpcURL); // new live web3 connection built
+
+const accountAddress = "0xaa3718205b4bcc9ce90f1C75CA09B686159EAcaE";
+
+Web3.eth.getBalance(accountAddress,(err,wei)=> {
+    console.log(wei);
+    balance = Web3.utils.fromWei(wei,'ether');
+    console.log(balance);
+ })
+
